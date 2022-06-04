@@ -1,0 +1,90 @@
+/* .App{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(30, 140, 190);
+}
+
+.sign-up-card{
+  padding: 20px;
+  width: 300px;
+  height: fit-content;
+  border:1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(206, 158, 190);
+  color:rgb(1, 63, 92);
+}
+
+.sign-up-card form{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.avatar{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.sign-up-card form input{
+  padding: 10px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+button{
+  margin-top: 10px;
+  padding: 10px 0px;
+  background-color: rgb(30, 140, 190);
+  color:rgb(255, 255, 255);
+  border:none;
+  font-size: 1.2em;
+  min-width: 225
+} */
+
+.App {
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.wrapper {
+  background-color: rgb(4, 189, 4);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper .data {
+  background-color: #ccc;
+  padding: 1rem;
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  background-color: white;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+input{
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+h2{
+  margin: 0;
+}
