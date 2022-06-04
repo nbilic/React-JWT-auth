@@ -3,7 +3,6 @@ const { verifyJWT, signJWT } = require("../utils/jwt.utils");
 const jwt = require("jsonwebtoken");
 const deserializeUser = (req, res, next) => {
   const { accessToken, refreshToken } = req.cookies;
-  /*  console.log(accessToken, refreshToken); */
 
   if (!accessToken) {
     return next();
@@ -21,21 +20,17 @@ const deserializeUser = (req, res, next) => {
   const { payload: refresh } =
     expired && refreshToken ? verifyJWT(refreshToken) : { payload: null };
 
-  /* console.log(verifyJWT(refreshToken));
-  console.log(verifyJWT(accessToken)); */
-
   if (!refresh) {
     return next();
   }
 
   let session = getSession(refresh.sessionId);
-  //console.log("session is ", session);
+
   if (!session && !expired)
     return res.status(400).send({ error: "No active session" });
 
   if (!session && expired) {
     const s = jwt.decode(accessToken);
-    //return res.status(400).send({ error: "No active session" });
     session = createSession(s.email, s.name);
   }
 
