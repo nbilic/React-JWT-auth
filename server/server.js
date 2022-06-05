@@ -9,14 +9,18 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://quin-sheet.herokuapp.com"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://quin-sheet.herokuapp.com",
+    ],
     credentials: true,
   })
 );
 app.use(deserializeUser);
 app.use("/api", usersRoute);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8088;
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);

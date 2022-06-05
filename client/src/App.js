@@ -17,7 +17,7 @@ function App() {
 
     axios
       .post(
-        `http://localhost:8080/api/session`,
+        `http://localhost:8088/api/session`,
         { email, password },
         {
           withCredentials: true,
@@ -36,7 +36,7 @@ function App() {
 
   async function getSessionData() {
     axios
-      .get(`http://localhost:8080/api/session`, {
+      .get(`http://localhost:8088/api/session`, {
         withCredentials: true,
       })
       .then((res) => setSessionData(res.data))
@@ -45,7 +45,7 @@ function App() {
 
   async function logout() {
     axios
-      .delete(`http://localhost:8080/api/session`, {
+      .delete(`http://localhost:8088/api/session`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -58,7 +58,7 @@ function App() {
   useEffect(() => {
     async function relogUser() {
       axios
-        .get(`http://localhost:8080/api/session`, {
+        .get(`http://localhost:8088/api/session`, {
           withCredentials: true,
         })
         .then((res) => setUser(res.data.name))

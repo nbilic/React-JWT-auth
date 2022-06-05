@@ -17,14 +17,14 @@ const createSessionHandler = (req, res) => {
   // create access token
   const accessToken = signJWT(
     { email: user.email, name: user.name, sessionId: session.sessionId },
-    "10s"
+    "10m"
   );
 
   const refreshToken = signJWT({ sessionId: session.sessionId }, "1y");
 
   // set access token in cookie
   res.cookie("accessToken", accessToken, {
-    maxAge: 300000, // 5 min
+    maxAge: 8.64e7, // 1 day
     httpOnly: true,
   });
   res.cookie("refreshToken", refreshToken, {

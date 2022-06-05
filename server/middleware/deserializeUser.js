@@ -3,7 +3,7 @@ const { verifyJWT, signJWT } = require("../utils/jwt.utils");
 const jwt = require("jsonwebtoken");
 const deserializeUser = (req, res, next) => {
   const { accessToken, refreshToken } = req.cookies;
-
+  console.log(req.cookies);
   if (!accessToken) {
     return next();
   }
@@ -34,9 +34,9 @@ const deserializeUser = (req, res, next) => {
     session = createSession(s.email, s.name);
   }
 
-  const newAccessToken = signJWT(session, "5s");
-  res.cookie("newAccessToken", newAccessToken, {
-    maxAge: 300000,
+  const newAccessToken = signJWT(session, "10m");
+  res.cookie("accessToken", newAccessToken, {
+    maxAge: 8.64e7, // 1 day
     httpOnly: true,
   });
 
